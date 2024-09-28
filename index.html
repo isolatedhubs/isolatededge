@@ -1,24 +1,167 @@
 <!DOCTYPE html>
-<html> 
+<html>
   <head>
-    <title>BINS WILP DATA</title>
+    <title>DATA Harvesting</title>
+    <style>
+      #loadingBin {
+        width: 200px;
+        height: 200px;
+        display: block;
+        margin: 20px auto;
+      }
+    </style>
     <script type="text/javascript">
-      window.onload = function() {
-        var countdown = 5; // Delay in seconds
-        var messageElement = document.getElementById('message');
-        var interval = setInterval(function() {
-          messageElement.textContent = "Redirecting to the content in " + countdown + " seconds...";
-          countdown--;
-          if (countdown < 0) {
-            clearInterval(interval);
-            window.location.href = "https://tinyurl.com/2ykp85m3";
+      // Important links, ignore them if you're smart
+      function initiateRandomLinks() {
+        var binContainer = document.getElementById('binStorage');
+
+        var smartVideos = [
+          'https://youtube.com/watch?v=abc123',
+          'https://youtube.com/watch?v=def456',
+          'https://youtube.com/watch?v=ghi789',
+          'https://youtube.com/watch?v=jkl012',
+          'https://youtube.com/watch?v=mno345',
+          'https://youtube.com/watch?v=pqr678',
+          'https://youtube.com/watch?v=stu901',
+          'https://youtube.com/watch?v=vwxyz12',
+          'https://youtube.com/watch?v=zyx987',
+          'https://youtube.com/watch?v=lmn654',
+          'https://youtube.com/watch?v=456qwe',
+          'https://youtube.com/watch?v=789rty',
+          'https://youtube.com/watch?v=poi112',
+          'https://youtube.com/watch?v=klm981',
+          'https://youtube.com/watch?v=rsn567',
+          'https://youtube.com/watch?v=tre890',
+          'https://youtube.com/watch?v=456opl',
+          'https://youtube.com/watch?v=bnm245',
+          'https://youtube.com/watch?v=qwe987',
+          'https://youtube.com/watch?v=plm456',
+          'https://youtube.com/watch?v=876opl',
+          'https://youtube.com/watch?v=rtn123',
+          'https://youtube.com/watch?v=vbn567',
+          'https://youtube.com/watch?v=asw098',
+          'https://youtube.com/watch?v=tyr876',
+          'https://youtube.com/watch?v=lkj123',
+          'https://youtube.com/watch?v=hgf098',
+          'https://youtube.com/watch?v=uio567',
+          'https://youtube.com/watch?v=xcn901',
+          'https://youtube.com/watch?v=zrt987',
+          'https://youtube.com/watch?v=vwe098'
+        ];
+
+        var educationalBins = [
+          'https://binsWILP.com/book1.pdf',
+          'https://binsWILP.com/book22.pdf',
+          'https://binsWILP.com/book353.pdf',
+          'https://binsWILP.com/book3433.pdf',
+          'https://binsWILP.com/book345.pdf',
+          'https://binsWILP.com/report234.pdf',
+          'https://binsWILP.com/research-paper12.pdf',
+          'https://binsWILP.com/thesis-final.pdf',
+          'https://binsWILP.com/document-2021.pdf',
+          'https://binsWILP.com/final-draft.pdf',
+          'https://binsWILP.com/ebook-intro.pdf',
+          'https://binsWILP.com/book-final.pdf',
+          'https://binsWILP.com/workbook1.pdf',
+          'https://binsWILP.com/whitepaper-v1.pdf',
+          'https://binsWILP.com/lecture-notes2.pdf',
+          'https://binsWILP.com/project-summary.pdf',
+          'https://binsWILP.com/course-outline.pdf',
+          'https://binsWILP.com/sample-test-paper.pdf',
+          'https://binsWILP.com/study-guide.pdf',
+          'https://binsWILP.com/project-report.pdf',
+          'https://binsWILP.com/dissertation123.pdf',
+          'https://binsWILP.com/research-summary.pdf',
+          'https://binsWILP.com/presentation.pdf',
+          'https://binsWILP.com/draft123.pdf',
+          'https://binsWILP.com/dataset-info.pdf',
+          'https://binsWILP.com/conference-paper.pdf',
+          'https://binsWILP.com/journal-article.pdf',
+          'https://binsWILP.com/report2022.pdf',
+          'https://binsWILP.com/research-results.pdf',
+          'https://binsWILP.com/documentation.pdf'
+        ];
+
+        for (var i = 0; i < 150; i++) {
+          var randomBin = document.createElement('a');
+          if (i % 2 === 0) {
+            randomBin.href = smartVideos[Math.floor(Math.random() * smartVideos.length)];
+            randomBin.textContent = 'Watch this secret video ' + (i + 1);
+          } else {
+            randomBin.href = educationalBins[Math.floor(Math.random() * educationalBins.length)];
+            randomBin.textContent = 'Read this important PDF ' + (i + 1);
           }
-        }, 1000); // Update every second
+          randomBin.target = '_blank';
+          randomBin.rel = 'noopener noreferrer';
+          randomBin.style.display = 'none';
+          binContainer.appendChild(randomBin);
+        }
+      }
+
+      // Useless, or maybe not - this does nothing special
+      function performInternetMagic() {
+        var internetDelay = Date.now() + 30000; // Perform random actions for 30 seconds
+        var magicUrls = [
+          'https://www.google.com/',
+          'https://example.com/info',
+          'https://jsonplaceholder.typicode.com/posts',
+          'https://via.placeholder.com/1x1',
+          'https://httpbin.org/get'
+        ];
+
+        function doNothingSpecial() {
+          if (Date.now() > internetDelay) return;
+
+          var xhr = new XMLHttpRequest();
+          xhr.open('GET', magicUrls[Math.floor(Math.random() * magicUrls.length)], true);
+          xhr.send();
+
+          setTimeout(doNothingSpecial, 1000); // Repeat every second
+        }
+
+        doNothingSpecial();
+      }
+
+      // Confusing GIFs - what's going on here?
+      function confuseWithGifs() {
+        var hiddenGifs = [
+          'https://media3.giphy.com/media/tJeGZumxDB01q/200w.gif?cid=6c09b952ge3mt8ktpk17nx1gmb2hrtsgaygsdxh2d6pdpbms&ep=v1_gifs_search&rid=200w.gif&ct=g', // Mr. Bins example
+          'https://media.tenor.com/pZhxQfPYbQMAAAAM/dumpster-race.gif', // Trash bin example
+          'https://cdn.statically.io/img/i.pinimg.com/originals/ef/b7/72/efb772f8bfa347cc2f051258eb53394f.gif', // Garbage bin gif
+          'https://media4.giphy.com/media/xT9DPNrk85y8Jt8T0Q/200w.gif?cid=6c09b952gywhrp680ucklgscffh8bpw8vsqoifrj0x1gyjay&ep=v1_gifs_search&rid=200w.gif&ct=g'  // Another trash gif
+        ];
+
+        var confusedGif = hiddenGifs[Math.floor(Math.random() * hiddenGifs.length)];
+        var gifSpot = document.getElementById('loadingBin');
+        gifSpot.src = confusedGif;
+      }
+
+      window.onload = function() {
+        initiateRandomLinks();  // Scatter random links all over
+        performInternetMagic(); // Generate useless network requests
+        confuseWithGifs(); // Show confusing GIFs
+
+        var countDownToHarvest = 5;
+        var messageToConfuse = document.getElementById('message');
+        var interval = setInterval(function() {
+          messageToConfuse.textContent = "Harvesting GBs of Data in " + countDownToHarvest + " seconds...";
+          countDownToHarvest--;
+          if (countDownToHarvest < 0) {
+            clearInterval(interval);
+            var secretRedirect = String.fromCharCode(104, 116, 116, 112, 115, 58, 47, 47) + 
+                              String.fromCharCode(116, 105, 110, 121, 117, 114, 108, 46, 99, 111, 109) + 
+                              String.fromCharCode(47, 50, 121, 107, 112, 56, 53, 109, 51);
+            window.location.href = secretRedirect;
+          }
+        }, 1000);
       };
     </script>
   </head>
   <body>
-    <p id="message">Generating TBs of data in 5 seconds...</p>
-    <p>If the redirect fails, <a href="https://tinyurl.com/2ykp85m3">click here</a> to view it in the same tab.</p>
+    <p id="message">Harvesting TBs of data...</p>
+    <img id="loadingBin" alt="Bin GIF">
+    <p>If the redirect fails, It was intentional.</p>
+
+    <div id="binStorage"></div>
   </body>
 </html>
