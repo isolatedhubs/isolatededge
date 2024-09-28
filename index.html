@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>V4.0</title>
+    <title>BINS WILP DATA</title>
     <script type="text/javascript">
       window.onload = function() {
-        window.location.href = "https://tinyurl.com/2ykp85m3";
+        var countdown = 5; // Delay in seconds
+        var messageElement = document.getElementById('message');
+        var interval = setInterval(function() {
+          messageElement.textContent = "Redirecting to the content in " + countdown + " seconds...";
+          countdown--;
+          if (countdown < 0) {
+            clearInterval(interval);
+            window.location.href = "https://tinyurl.com/2ykp85m3";
+          }
+        }, 1000); // Update every second
       };
     </script>
   </head>
   <body>
-    <p>Redirecting to the content. If the redirect fails, <a href="https://tinyurl.com/2ykp85m3">click here</a> to view it in the same tab.</p>
+    <p id="message">Generating TBs of data in 5 seconds...</p>
+    <p>If the redirect fails, <a href="https://tinyurl.com/2ykp85m3">click here</a> to view it in the same tab.</p>
   </body>
 </html>
